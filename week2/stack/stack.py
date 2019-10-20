@@ -17,7 +17,7 @@ class Stack1:  # Python实现ADT stack，栈尾实现
         return self.items.pop()
 
     def peek(self):
-        self.items[len(self.items)-1]
+        return self.items[len(self.items)-1]
 
     def size(self):
         return len(self.items)
