@@ -25,5 +25,5 @@ def parChecker(symbolString):
 
 
 if __name__ == "__main__":
-    print(parChecker("((((((((()))))))))"))
+    print(parChecker("([()[]{]}<>)"))
     print(parChecker("(((((()))))"))
