@@ -118,9 +118,9 @@
 
 ## 参考资料
 
-[北京大学地空学院数据结构与算法B课程网站](https://gis4g.pku.edu.cn/course/pythonds/)
-[数据结构与算法Python-中文版-内部教材](https://gis4g.pku.edu.cn/download/sessdsa-textbook/)
-[在线英文版教材](https://runestone.academy/runestone/books/published/pythonds/index.html)
-[Python3官方中文版文档](https://docs.python.org/zh-cn/3/)
-[Python3烹饪书](https://python3-cookbook.readthedocs.io/zh_CN/latest/index.html)
-[在线Python代码规范](https://python-guide.gitbooks.io/python-style-guide/content/)
+[北京大学地空学院数据结构与算法B课程网站](https://gis4g.pku.edu.cn/course/pythonds/)  
+[数据结构与算法Python-中文版-内部教材](https://gis4g.pku.edu.cn/download/sessdsa-textbook/)  
+[在线英文版教材](https://runestone.academy/runestone/books/published/pythonds/index.html)  
+[Python3官方中文版文档](https://docs.python.org/zh-cn/3/)  
+[Python3烹饪书](https://python3-cookbook.readthedocs.io/zh_CN/latest/index.html)  
+[在线Python代码规范](https://python-guide.gitbooks.io/python-style-guide/content)
