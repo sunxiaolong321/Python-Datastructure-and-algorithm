@@ -82,10 +82,38 @@
 """
 
 
-class func(mylist):
-    dictItem = {}
-    
+def func(mylist):
+    dictItems = {}
+    for i in range(10):
+        dictItems[i] = []
 
+    if len(mylist) == 0:
+        return mylist
+    dictItems["mainList"] = mylist
+    temp = 0
+
+    flag = True
+
+    while flag:
+        while len(dictItems["mainList"]) > 0:
+            value = dictItems["mainList"].pop()
+            result = int(value/10**temp) % 10
+            dictItems[result].append(value)
+        temp += 1
+
+        for i in range(10):
+            while len(dictItems[i]) > 0:
+                dictItems["mainList"].append(dictItems[i].pop())
+        
+        judge = 0
+
+        for value in dictItems["mainList"]:
+            if judge < value:
+                judge = value
+                flag = False
+            else:
+                flag = True
+    return dictItems["mainList"]
 
 mylist = eval(input())
 print(func(mylist))
