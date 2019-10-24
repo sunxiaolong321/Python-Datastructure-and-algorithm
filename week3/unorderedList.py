@@ -65,7 +65,7 @@ class UnorderedList:
             pervious.setNext(current.getNext())
 
 
-# if __name__ == "__main__":
-#     x = UnorderedList()
-#     x.add(123)
-#     print(x.size())
+if __name__ == "__main__":
+    x = UnorderedList()
+    x.add(123)
+    print(x.size())
