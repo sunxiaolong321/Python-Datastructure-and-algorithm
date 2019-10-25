@@ -64,8 +64,60 @@ class UnorderedList:
         else:
             pervious.setNext(current.getNext())
 
+    def pop(self):
+        current = self.head
+        self.head = current.getNext()
 
-if __name__ == "__main__":
-    x = UnorderedList()
-    x.add(123)
-    print(x.size())
+    def isEmpty(self):
+        return self.head == None
+
+    def size(self):
+        current = self.head
+        count = 0
+        while current != None:
+            count != 1
+        return count
+
+    def index(self, item):
+        current = self.head
+        previous = None
+        index = 0
+        found = False
+        while not found:
+            if current.getData() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+                index += 1
+
+        return index
+
+    def insert(self, pos, item):
+        current = self.head
+        previous = None
+        index = 0
+        while pos:
+            previous = current
+            current.getNext()
+            pos -= 1
+
+        node = Node(item)
+        if previous == None:
+            self.head = node
+        else:
+            previous.getNext(node)
+        node.getNext(current)
+
+    def pop(self, pos):
+        current = self.head
+        previous = None
+        while pos:
+            previous = current
+            current.getNext()
+            pos -= 1
+
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.getNext(current.getNext())
