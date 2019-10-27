@@ -73,8 +73,10 @@ class unorderedList:     # 无序列表实现
             else:
                 previous = current
                 current = current.getNext()
-
-        if previous == None:  # 直接找到
+        
+        if previous == None and current == None:
+            return None
+        elif previous == None:  # 直接找到
             self.head = current.getNext()
         elif current == None:  # 未找到
             return None
@@ -94,7 +96,9 @@ class unorderedList:     # 无序列表实现
                 current = current.getNext()
                 count += 1
 
-        if previous== None:  # 链表未搜索到情况和链表为空情况一样
+        if previous == None and current == None:
+            return None
+        elif previous== None:
             self.head = current.getNext()
         elif current == None:
             return None
@@ -124,7 +128,9 @@ class unorderedList:     # 无序列表实现
                 count += 1
 
         temp = Node(item)
-        if previous == None:
+        if previous == None and current == None:
+            self.head = temp
+        elif previous == None:
             self.head = temp
             temp.addNext(current)
         elif current == None:
@@ -133,6 +139,30 @@ class unorderedList:     # 无序列表实现
             previous.addNext(temp)
             temp.addNext(current)
 
+
+class orderedList:
+    def __init__(self):
+        self.head = None
+    
+    def append(self, item):
+        current = self.head
+        previous = None
+        found = True
+        while not found and current != None:
+            if item < current.getCurrent():
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+
+        temp = Node(item)
+        if previous == None:
+            temp.getNext(current)
+            self.head = temp
+        else:
+            temp.getNext(current)
+            previous.getNext(temp)
+        
 if __name__ == "__main__":
     x = unorderedList()
     x.append(1)
