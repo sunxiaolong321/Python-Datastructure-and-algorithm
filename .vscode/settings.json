@@ -1,3 +1,14 @@
 {
-    "python.pythonPath": "D:\\Miniconda3\\python.exe"
+    "python.pythonPath": "D:\\Miniconda3\\python.exe",
+    "sqltools.connections": [
+        {
+            "database": "qunar",
+            "dialect": "MySQL",
+            "name": "mysql",
+            "password": "380324",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
 }

@@ -144,10 +144,22 @@ class orderedList:
     def __init__(self):
         self.head = None
     
+    def size(self):
+        count = 0
+        current = self.head
+        while current != None:
+            currrent = current.getNext()
+
+        return count
+    
+    def isEmpty(self):
+        return self.head == None
+    
+
     def append(self, item):
         current = self.head
         previous = None
-        found = True
+        found = False
         while not found and current != None:
             if item < current.getCurrent():
                 found = True
@@ -157,16 +169,71 @@ class orderedList:
 
         temp = Node(item)
         if previous == None:
-            temp.getNext(current)
-            self.head = temp
+            temp.addNext(current)
+            self.head = temp 
         else:
-            temp.getNext(current)
-            previous.getNext(temp)
+            temp.addNext(current)
+            previous.addNext(temp)
+    
+    def remove(self, item):
+        current = self.head
+        previous = None
+        found = False
+        while current != None and not found:
+            if current.getCurrent() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+        
+        if previous == None and current == None:
+            return None
+        elif previous == None:  # 直接找到
+            self.head = current.getNext()
+        elif current == None:  # 未找到
+            return None
+        else:
+            previous.addNext(current.getNext())
+    
+    def pop(self):
+        current = self.head
+        if current != None:
+            self.head = current.getNext()
+        else:
+            return None
+
+    def pop(self, pos):
+        current = self.head
+        previous = None
+        count = 0
+        found = False
+        while current != None and not found:
+            if count == pos:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+                count += 1
+
+        if previous == None and current == None:
+            return None
+        elif previous == None:
+            self.head = current.getNext()
+        elif current == None:
+            return None
+        else:
+            previous.addNext(current.getNext())
+
+    def printer(self):
+        current = self.head
+        while current != None:
+            print(current.getCurrent(), end="\t")
+            current = current.getNext()
         
 if __name__ == "__main__":
-    x = unorderedList()
-    x.append(1)
-    x.append(2)
+    x = orderedList()
+    x.append(5)
     x.append(4)
-    x.insert(5,6)
+    x.append(0)
+    x.append(8)
     x.printer()
