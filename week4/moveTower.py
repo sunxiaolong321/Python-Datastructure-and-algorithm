@@ -9,4 +9,4 @@ def moveTower(height, fromPole, withPole, toPole):
 def moveDisk(disk, fromPole, toPole):
     print(f"Moving disk[{disk}] from {fromPole} to {toPole}")
 
-moveTower(3 , "#1", "#2", "#3")
+moveTower(3, "#1", "#2", "#3")
