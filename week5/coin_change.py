@@ -42,4 +42,5 @@ def NewGreedyChange(coinValueList, change, knownResults):  # 贪心策略解决�
                 knownResults[change] = minCoins
     return minCoins
 
-print(NewGreedyChange([1,5,10,25],63,[0]*64))
+# print(NewGreedyChange([1,5,10,25],63,[0]*64))
+print(list(range(5)))

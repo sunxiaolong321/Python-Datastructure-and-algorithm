@@ -121,12 +121,12 @@ def dynamicCandy(ratings):
         else:   # 如果小于前一个小孩，则新加入的小孩分一个糖果，之前的小孩应该比他分到的糖果多
             distributions[i] = 1
             if distributions[i - 1] == 1:   # 如果前面的小孩只有一个糖果，则需要更新distributions
-                j = i-1 # 前面的小孩都多分一个糖果，直到递增结束
+                j = i-1  # 前面的小孩都多分一个糖果，直到递增结束
                 while j != 0 and distributions[j] < distributions[j-1]:
                     distributions[j] += 1
                     j -= 1
                 if distributions[j] <= distributions[j+1] and\
-                                         distributions[j] != distributions[j+1]:    # ratings 相等情况
+                        distributions[j] != distributions[j+1]:    # ratings 相等情况
                     distributions[j] += 1
 
     sum = 0
@@ -173,8 +173,21 @@ def findWays(expr):
     else:
         nums.append(num)
 
-    # code here
+    def diffWaysToComputer(nums, ops):   # 使用递归运算
+        if not ops:
+            return [nums[0]]
+        if len(ops) == 1:
+            if ops[0] == '+':
+                return nums[0]+nums[1]
+            elif ops[0] == '-':
+                return nums[0]-nums[1]
+            else:
+                return nums[0]*nums[1]
+            res = []
+            for i in range(len(ops)):
+                result = diffWaysToComputer(nums[:i+1], ops[:i])
+    return diffWaysToComputer(nums, ops)
 
 
-expr = input()
+expr = "2*3-4*5"
 print(findWays(expr))
