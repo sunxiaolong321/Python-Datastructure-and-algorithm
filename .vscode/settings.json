@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "D:\\Miniconda3\\python.exe",
+    "python.pythonPath": "D:\\Miniconda3\\envs\\datastructure\\python.exe",
     "sqltools.connections": [
         {
             "database": "qunar",
